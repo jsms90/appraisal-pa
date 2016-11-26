@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FAC9/lbs_hackathon#readme",
   "dependencies": {
+    "handlebars": "^4.0.6",
     "hapi": "^15.2.0",
     "inert": "^4.0.2",
     "tesseract.js": "^1.0.10",
