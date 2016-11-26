@@ -1,0 +1,25 @@
+{
+  "name": "lbs_hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC9/lbs_hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC9/lbs_hackathon/issues"
+  },
+  "homepage": "https://github.com/FAC9/lbs_hackathon#readme",
+  "dependencies": {
+    "hapi": "^15.2.0",
+    "inert": "^4.0.2",
+    "tesseract.js": "^1.0.10",
+    "vision": "^4.1.0"
+  }
+}
