@@ -1,5 +1,21 @@
-<p>Username</p>
-<input></input>
-<p>Password</p>
-<input></input>
-<button>Login</button>
+<html>
+<head>
+<style>
+  body {
+    background-color: ;
+  }
+</style>
+</head>
+<body>
+  <div class="loginPage">
+    <input type="text" placeholder="your email"/><br>
+    <input type="text" placeholder="your password"/><br>
+    <button onclick="login()">Login</button>
+  </div>
+  <script>
+    const login = () => {
+      window.location.href = "http://localhost:5000/";
+    };
+  </script>
+</body>
+</html>

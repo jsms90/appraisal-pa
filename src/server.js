@@ -22,7 +22,7 @@ server.register([inert,vision], (err) => {
      layout: 'layout'
    });
 
-  server.route(routes);
+   server.route(routes);
 });
 // server.route(routes);
 

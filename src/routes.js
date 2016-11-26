@@ -1,4 +1,13 @@
-const ocr = require('../lib/ocr.js')
+const ocr = require('../lib/ocr.js');
+
+const login={
+  method:'GET',
+  path:'/login',
+  handler: (request,response)=>{
+    response.view('login');
+  }
+};
+
 const home={
   method:'GET',
   path:'/',
@@ -76,14 +85,16 @@ const home={
 }
 }
 
+
 const upload={
   method:'POST',
   path: '/upload',
-  handler: ocr((err,response,body)=>{
+  handler: (err,response,body)=>{
       if (err) throw err;
       console.log(body);
+      //ocr();
       //cb(null,body);
-  })
+  }
 }
 
 
@@ -96,6 +107,6 @@ const files ={
       path: '.' // the directory where we we have all our static files
     }
   }
-}
-
-module.exports = [home, files];
+};
+// module.exports = [home, upload, files, login];
+module.exports = [home, files, login];
