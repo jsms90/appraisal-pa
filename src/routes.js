@@ -1,3 +1,4 @@
+const ocr = require('../lib/ocr.js')
 const home={
   method:'GET',
   path:'/',
@@ -5,6 +6,17 @@ const home={
       response('I am up and running :)');
   }
 };
+
+
+const upload={
+  method:'POST',
+  path: '/upload',
+  handler: ocr((err,response,body)=>{
+      if (err) throw err;
+      console.log(body);
+      //cb(null,body);
+  })
+}
 
 
 //to serve static files
