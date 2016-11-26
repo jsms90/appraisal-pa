@@ -13,12 +13,14 @@ server.connection({
 server.register([inert,vision], (err) => {
   if (err) throw err;
    server.views({
-  engines: {
-  hbs: require('handlebars')
-},
-  relativeTo: __dirname,
-  path: '../views'
-});
+     engines: {
+       html: require('handlebars')
+     },
+     relativeTo: __dirname,
+     path: '../views',
+     layoutPath: '../views/layout',
+     layout: 'layout'
+   });
 
   server.route(routes);
 });

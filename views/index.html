@@ -1,15 +1,8 @@
-<div>
-  <p>Certificate 1</p>
-  <button>Reflect</button>
-</div>
-<div>
-  <p>Certificate 2</p>
-  <button>Reflect</button>
-</div>
-<div>
-  <p>Certificate 3</p>
-  <button>Reflect</button>
-</div>
-<footer>
-  <button>Add New</button>
-</footer>
+{{#each this.certificates}}
+  <div class="certificate">
+    <img href={{this.assertion.badge.image}}/>
+    <p class="provider">{{this.assertion.badge.issuer.name}}</p>
+    <p class="date">{{this.assertion.issuedOn}}</p>
+    <p class="type">Certificate</p>
+  </div>
+{{/each}}
