@@ -1,0 +1,29 @@
+.certificate {
+  position: relative;
+  background-color: lightblue;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  margin-bottom: 50px;
+}
+
+.certificate > img {
+  float: left;
+}
+#issuer_name {
+  margin: 0;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+}
+
+#date_issued, #type {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+#type {
+  text-align: right;
+  margin-left: 15%;
+}
