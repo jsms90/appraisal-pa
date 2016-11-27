@@ -31,14 +31,35 @@ body {
 }
 
 .footer {
-  width: 80%;
-  height: 120px;
-  background-color: #278BAB;
   bottom: 0;
   margin-left: 50%;
-  margin-bottom: 4%;
+  margin-bottom: 0;
   transform: translate(-50%, -4%);
   position: absolute;
+}
+
+input[type=file] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+  height: 3rem;
+  font-size: 3rem;
+  background-color: #278BAB;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: block;
+  text-align: center;
+}
+
+.submit {
+  margin-top: 20px;
+  display: block;
 }
 
 .footer_button {

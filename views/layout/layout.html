@@ -13,9 +13,15 @@
     </header>
     <section class="certificates">
       {{{content}}}
+
     </section>
     <footer class="footer">
-      <button class="footer_button">Add Certificate</button>
+      <form method="post" enctype="multipart/form-data" action="/newfile">
+        <label for="default-file" class="custom-file-upload">Add certificate</label>
+        <input type="file" name="file" id="default-file"/>
+        <input type="submit" value="submit" name="submit" class="submit"/>
+
+      </form>
     </footer>
   </body>
 </html>
