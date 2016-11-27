@@ -1,17 +1,75 @@
 <html>
 <head>
-<style>
+
+  <style>
   body {
-    background-color: ;
+    font: helvetica-neue;
+    margin: 0;
+    height: 100%;
+    width:100%;
+    background: linear-gradient(180deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white;
+    opacity:0.95;
+    align-items:center;
+      display:flex;
+
   }
+  .container{
+     position: absolute;
+     top: 50%;
+     margin-top: -200px;/* half of #content height*/
+     left: 0;
+     width: 100%;
+  }
+  .content {
+     width: 624px;
+     margin-left: auto;
+     margin-right: auto;
+     height: 395px;
+  }
+
+/* position: absolute; */
+/* top: 50%; */
+/* left: 50%; */
+/* transform: translate(-50%, -50%); */
+width: 80%;
+  }
+  input[type="text"] {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+
 </style>
 </head>
-<body>
-  <div class="loginPage">
-    <input type="text" placeholder="your email"/><br>
-    <input type="text" placeholder="your password"/><br>
-    <button onclick="login()">Login</button>
+<body >
+  <div class="logo">
+  <svg xmlns="http://www.w3.org/2000/svg" width="56.19" height="50.43" viewBox="0 0 56.19 50.43">
+    <title>Asset 1</title>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_5" data-name="Layer 5">
+        <polygon points="22.75 0 33.44 0 56.19 50.43 34.11 50.43 31.77 35.32 39.24 35.32 28.1 12.37 16.95 35.32 24.42 35.32 22.08 50.43 0 50.43 22.75 0" style="fill: #fff"/>
+      </g>
+    </g>
+  </svg>
+</div>
+  <div class="container">
+    <div class="content">
+      <input type="text" placeholder="Email"/><br>
+      <input type="text" placeholder="Password"/><br>
+      <button onclick="login()">Login</button><br>
+      or<br>
+      create an account<br>
+    </div>
   </div>
+
+
+
+
   <script>
     const login = () => {
       window.location.href = "http://localhost:5000/";
