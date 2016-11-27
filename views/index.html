@@ -1,8 +1,8 @@
 {{#each this.certificates}}
   <div class="certificate">
     <img href={{this.assertion.badge.image}}/>
-    <p class="provider">{{this.assertion.badge.issuer.name}}</p>
-    <p class="date">{{this.assertion.issuedOn}}</p>
-    <p class="type">Certificate</p>
+    <p class="certificate_text" id="issuer_name">{{this.assertion.badge.issuer.name}}</p>
+    <p class="certificate_text" id="date_issued">{{this.assertion.issuedOn}}</p>
+    <p class="certificate_text" id="type">Certificate</p>
   </div>
 {{/each}}
