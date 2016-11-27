@@ -5,14 +5,24 @@ body {
 }
 
 .header {
-  width:100%;
-  height: 300px;
+  width: 100%;
+  height: 200px;
   background-color: #69C9CA;
+  font-size: 3.7rem;
 }
 
 .header .logo {
-  height: 150px;
-  margin-left:
+  height: 75px;
+  margin-top: 5.7rem;
+  margin-left: 1rem;
+  float: left;
+}
+
+.header .title {
+  color: white;
+  margin: 0;
+  padding-top: 10%;
+  padding-left: 35%;
 }
 
 .certificates {
