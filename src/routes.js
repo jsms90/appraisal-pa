@@ -1,9 +1,10 @@
 const ocr = require('../lib/ocr.js');
+const fs = require('fs');
 
 const login={
   method:'GET',
   path:'/login',
-  handler: (request,response)=>{
+  handler: (request, response) => {
     response.view('login');
   }
 };
@@ -11,8 +12,7 @@ const login={
 const home={
   method:'GET',
   path:'/',
-  handler: (request,response)=>{
-    console.log("I'm here");
+  handler: (request, response)=> {
     const certificates = [{
       "lastValidated": "2014-04-28T17:27:22.000Z",
       "hostedUrl": "http://example.org/badge-assertion.json",
@@ -80,26 +80,59 @@ const home={
       "imageUrl": "https://backpack.openbadges.org/images/badge/abcde12345.png"
     }
   ]
-  console.log(certificates);
   response.view('index', {certificates});
 }
 }
 
-
-const upload={
-  method:'POST',
+const upload = {
+  method: 'GET',
   path: '/upload',
-  handler: (err,response,body)=>{
-      if (err) throw err;
-      console.log(body);
-      //ocr();
-      //cb(null,body);
-  }
+  handler: ocr
 }
 
+  const newFile = {
+    method: 'POST',
+    path: '/newfile',
+    config: {
+      payload: {
+            output: 'stream',
+            parse: true,
+            allow: 'multipart/form-data'
+        },
+        handler: function (request, reply) {
+          console.log("in handler");
+          //console.log(request);
+              var data = request.payload;
+              console.log(request.payload);
+              if (data.file) {
+                console.log("got file");
+                  var name = data.file.hapi.filename;
+                  var path = __dirname + "/../uploads/" + name;
+                  console.log(path);
+                  var file = fs.createWriteStream(path);
+
+                  file.on('error', function (err) {
+                      console.error(err)
+                  });
+
+                  data.file.pipe(file);
+
+                  data.file.on('end', function (err) {
+                      var ret = {
+                          filename: data.file.hapi.filename,
+                          headers: data.file.hapi.headers
+                      }
+                      //console.log(JSON.stringify(ret));
+                      reply(JSON.stringify(ret));
+                  })
+              }
+
+          }
+  }
+  }
 
 //to serve static files
-const files ={
+const files = {
   method: 'GET',
   path: '/{files*}',
   handler: {
@@ -109,4 +142,4 @@ const files ={
   }
 };
 // module.exports = [home, upload, files, login];
-module.exports = [home, files, login];
+module.exports = [home, files, login, upload, newFile];
